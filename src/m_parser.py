@@ -5,6 +5,8 @@ from tkinter import ttk
 class Args:
     def __init__(self):
         self.algo = None
+        self.len = None
+        self.gif = None
         self.destroy = None
 
     def load(self):
@@ -12,6 +14,7 @@ class Args:
         try:
             self.algo = args["algo"]
             self.len = int(args["len"])
+            self.gif = args["gif"] == "Yes"
             self.destroy = args["destroy"]
         except:
             self.load()
@@ -46,25 +49,36 @@ class Args:
             lenght_entry.insert(tk.END, "20")
             lenght_entry.grid(column=0, row=3)
 
+            ################## gif ##################
+
+            label_3 = tk.Label(app, text="Create .gif output")
+            label_3.grid(column=0, row=4)
+
+            gif_entry = ttk.Combobox(app, values=["No", "Yes"], state="readonly",)
+            gif_entry.grid(column=0, row=5)
+            gif_entry.current(0)
+
             ################## validation ##################
             def callBackFunc():
                 args["algo"] = algo_combobox.get()
                 args["len"] = lenght_entry.get()
+                args["gif"] = gif_entry.get()
                 args["destroy"] = False
                 app.destroy()
 
             validate_button = ttk.Button(app, text="Run !", command=callBackFunc)
-            validate_button.grid(column=0, row=4)
+            validate_button.grid(column=0, row=6)
 
             ################## exit ##################
             def callBackFunc_exitV():
                 args["algo"] = algo_combobox.get()
-                args["len"] = int(lenght_entry.get())
+                args["len"] = lenght_entry.get()
+                args["gif"] = gif_entry.get()
                 args["destroy"] = True
                 app.destroy()
 
             quit_button = ttk.Button(app, text="Exit", command=callBackFunc_exitV)
-            quit_button.grid(column=0, row=5)
+            quit_button.grid(column=0, row=7)
 
             app.mainloop()
 

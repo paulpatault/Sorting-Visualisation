@@ -1,10 +1,12 @@
 from table import Table
 from data import Data
+import pygame
 
 
 class Algorithm:
-    def __init__(self, algo):
+    def __init__(self, algo, win=None):
         self.algo = algo
+        self.win = win
 
     def run(self, table):
         if self.algo == "Insertion Sort":
@@ -69,7 +71,9 @@ class Algorithm:
             return arr
 
         return quickSort(table.data, 0, len(table.data) - 1)
-'''
+
+
+"""
     def fusion_sort(self, table):
         def fusion(A, B):
             from time import sleep
@@ -150,4 +154,5 @@ class Algorithm:
             )
 
         return splitter(table)
-'''
+"""
+

@@ -12,6 +12,8 @@ class Table:
             self.data = Table.gen_data()
         self.screen = screen
 
+        self.idx = 0
+
     @staticmethod
     def gen_data():
         offset = csts.HEIGHT / (csts.LEN + 1)
@@ -21,6 +23,10 @@ class Table:
 
     def setVal(self, i, val):
         self.data[i] = Data(val)
+
+    def screenshot_(self):
+        pygame.image.save(self.screen, f"data/screenshot_{self.idx}.jpeg")
+        self.idx += 1
 
     def draw(self):
         self.screen.fill((255, 255, 255))
@@ -33,3 +39,5 @@ class Table:
             pygame.draw.rect(self.screen, color, rect)
 
         pygame.display.update()
+
+        self.screenshot_()
