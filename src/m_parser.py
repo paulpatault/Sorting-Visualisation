@@ -30,7 +30,9 @@ class Args:
             label_1.grid(column=0, row=0)
 
             algo_combobox = ttk.Combobox(
-                app, values=["Insertion Sort", "Quick Sort"], state="readonly"
+                app,
+                values=["Insertion Sort", "Quick Sort"],  # , "Fusion Sort"],
+                state="readonly",
             )
             algo_combobox.grid(column=0, row=1)
             algo_combobox.current(0)
