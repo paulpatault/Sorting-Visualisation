@@ -12,7 +12,7 @@ class Table:
             self.data = Table.gen_data()
         self.screen = screen
 
-        self.idx = 0
+        self.id_screenshot = 0
 
     @staticmethod
     def gen_data():
@@ -25,8 +25,8 @@ class Table:
         self.data[i] = Data(val)
 
     def screenshot_(self):
-        pygame.image.save(self.screen, f"data/screenshot_{self.idx}.jpeg")
-        self.idx += 1
+        pygame.image.save(self.screen, f"data/screenshot_{self.id_screenshot}.jpeg")
+        self.id_screenshot += 1
 
     def draw(self):
         self.screen.fill((255, 255, 255))

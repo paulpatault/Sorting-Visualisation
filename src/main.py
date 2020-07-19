@@ -25,7 +25,7 @@ def modules_reload():
     importlib.reload(csts)
 
 
-def make_gif(n, resize=0.7, speedx=1.2):
+def make_gif(n, resize=0.7, speedx=1):
     cwd = os.path.curdir
     if args.gif:
         images = [imageio.imread(f"data/screenshot_{i}.jpeg") for i in range(n)]
@@ -46,7 +46,7 @@ def main():
     algo = Algorithm(args.algo, screen)
     algo.run(table)
 
-    make_gif(table.idx)
+    make_gif(table.id_screenshot)
 
 
 while not args.destroy:
