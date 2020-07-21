@@ -4,9 +4,9 @@ A [Pygame](https://www.pygame.org/) GUI visualization of some sort algorithms. I
 # Preview
 
 
-| ![Preview GIF](assets/preview/quick.gif) | ![Preview GIF](assets/preview/insertion.gif) |
-| :--------------------------------------: | :------------------------------------------: |
-|         **Quick sort algorithm**         |         **Insertion sort algorithm**         |
+| ![Preview GIF](assets/preview/quick.gif) | ![Preview GIF](assets/preview/bubble.gif) | ![Preview GIF](assets/preview/insertion.gif) |
+| :--------------------------------------: | :---------------------------------------: | :------------------------------------------: |
+|         **Quick sort algorithm**         |         **Bubble sort algorithm**         |         **Insertion sort algorithm**         |
 
 
 # Dependencies and run commands

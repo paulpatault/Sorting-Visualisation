@@ -34,7 +34,11 @@ class Args:
 
             algo_combobox = ttk.Combobox(
                 app,
-                values=["Insertion Sort", "Quick Sort"],  # , "Fusion Sort"],
+                values=[
+                    "Insertion Sort",
+                    "Quick Sort",
+                    "Bubble Sort",
+                ],  # , "Fusion Sort"],
                 state="readonly",
             )
             algo_combobox.grid(column=0, row=1)

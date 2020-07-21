@@ -25,7 +25,7 @@ def modules_reload():
     importlib.reload(csts)
 
 
-def make_gif(n, resize=0.7, speedx=1):
+def make_gif(n, resize=0.5, speedx=1.5):
     cwd = os.path.curdir
     if args.gif:
         images = [imageio.imread(f"data/screenshot_{i}.jpeg") for i in range(n)]

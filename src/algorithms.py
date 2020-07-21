@@ -15,6 +15,8 @@ class Algorithm:
             return self.quick_sort(table)
         if self.algo == "Fusion Sort":
             return self.fusion_sort(table)
+        if self.algo == "Bubble Sort":
+            return self.bubble_sort(table)
 
     def insertion_sort(self, table):
         n = len(table.data)
@@ -71,6 +73,24 @@ class Algorithm:
             return arr
 
         return quickSort(table.data, 0, len(table.data) - 1)
+
+    def bubble_sort(self, table):
+        for i in range(len(table.data) - 1, 0, -1):
+            sorted_ = True
+            table.data[i].set_color((255, 255, 120))
+            for j in range(0, i):
+                if table.data[j + 1].value < table.data[j].value:
+                    table.data[j + 1], table.data[j] = table.data[j], table.data[j + 1]
+                    sorted_ = False
+
+                    table.data[j + 1].set_color((255, 120, 12))
+                    table.draw()
+                    # pygame.time.delay(300)
+                    table.data[j + 1].set_color()
+
+            table.data[i].set_color()
+            if sorted_:
+                return
 
 
 """
